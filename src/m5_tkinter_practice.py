@@ -42,7 +42,7 @@ def main():
 
 
     # -------------------------------------------------------------------------
-    # TODO: 6. After reading and understanding the m4e module,
+    # DONE: 6. After reading and understanding the m4e module,
     #   -- Put an Entry box on the Frame.
     #   -- Put a second Button on the Frame.
     #   -- Make this new Button, when pressed, print "Hello"
@@ -53,8 +53,7 @@ def main():
 
     entry_box = ttk.Entry(frame1)
     entry_box.grid()
-    contents = entry_box.get()
-    button2['command'] = (lambda: print(contents))
+    button2['command'] = (lambda: print(entry_box.get()))
     button2.grid()
 
     # -------------------------------------------------------------------------
@@ -80,7 +79,12 @@ def main():
     #      s = entry_box.get()
     #      n = int(s)
     ####################################################################
-
+    s = entry_box.get()
+    entry_box2 = ttk.Entry(frame1)
+    entry_box2.grid()
+    n = int(entry_box2.get())
+    button3 = ttk.Button(frame1, text='Print N Times')
+    button3['command'] = lambda: print(n * s)
     # -------------------------------------------------------------------------
     # TODO: 8. As time permits, do other interesting GUI things!
     # -------------------------------------------------------------------------
